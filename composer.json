@@ -1,0 +1,12 @@
+{
+    "name": "micr0mega/rector-issue-7196",
+    "autoload": {
+        "psr-4": {
+            "Micr0mega\\RectorIssue7196\\": "src/"
+        }
+    },
+    "require": {
+        "php": "7.2.*",
+        "rector/rector": "^0.13.1"
+    }
+}
