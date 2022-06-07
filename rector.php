@@ -15,17 +15,6 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/vendor',
     ]);
 
-    $dir   = new \RecursiveDirectoryIterator( __DIR__ . '/vendor/rector/rector/stubs-rector', \RecursiveDirectoryIterator::SKIP_DOTS);
-
-    $stubs = array_map(
-        function (\SplFileInfo $splFileInfo): string {
-            return $splFileInfo->getRealPath();
-        },
-        iterator_to_array(new \RecursiveIteratorIterator($dir))
-    );
-
-    $rectorConfig->bootstrapFiles($stubs);
-
     // register a single rule
     $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
 
